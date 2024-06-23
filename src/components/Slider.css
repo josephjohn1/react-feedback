@@ -1,0 +1,99 @@
+.slider-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 0 10px;
+  position: relative;
+  padding-bottom: 50px; /* Adjust as needed for more space below the slider */
+}
+
+.horizontal-slider {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.example-thumb {
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  background: #ffffff;
+  border: 5px solid #3774ff;
+  border-radius: 100%;
+  display: block;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+  top: 50%; /* Center the thumb vertically */
+  transform: translateY(-50%);
+}
+
+.example-track {
+  position: relative;
+  background: #ddd;
+  height: 8px; /* Track height remains the same */
+  top: 50%; /* Center the track vertically */
+  transform: translateY(-50%);
+}
+
+.example-track.example-track-0 {
+  background: transparent; /* Make initial track transparent */
+}
+
+.horizontal-slider .example-track {
+  height: 6px; /* Keep the track height the same */
+}
+
+.example-track.example-track-0::before {
+  content: '';
+  position: absolute;
+  top: -2px; /* Adjust to position above the marks */
+  left: 0;
+  right: 0;
+  height: 10px; /* Increase height of blue fill line */
+  background: #83a9ff;
+  z-index: -1; /* Place it behind the thumb */
+}
+
+.example-mark {
+  width: 8px;
+  height: 8px;
+  background-color: grey;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-left: -4px; /* Center the mark horizontally */
+  top: 50%; /* Center the mark vertically */
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure marks are above the blue fill line */
+}
+
+.example-mark.example-mark-active {
+  border: 4px solid #00d4ff;
+  background-color: rgb(255, 255, 255);
+}
+
+.example-mark.example-mark-completed {
+  background-color: #83a9ff;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -10px; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  pointer-events: none; /* Ensure labels don't interfere with slider interactions */
+}
+
+.slider-label {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  width: 20%; /* Make each label take up 20% of the container width */
+  position: relative;
+  transform: translateX(-50%); /* Center the label horizontally */
+  left: 10%; /* Position the label correctly */
+}
+
+.slider-label-active {
+  color: blue;
+}

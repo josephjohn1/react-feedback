@@ -1,0 +1,112 @@
+/* Feedback.css */
+
+.feedback-container {
+  background-color: lightblue;
+  padding: 100px 10px; /* More padding at the top (60px), 20px on the sides */
+  text-align: center; /* Center align content */
+  position: relative; /* Ensure relative positioning for absolute title */
+}
+
+.feedback-title-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.feedback-title {
+  color: red;
+}
+
+.feedback-content {
+  max-width: 1000px;
+  margin: 0 auto; /* Center the content horizontally */
+  padding-top: 80px; /* Adjust as needed to create space below the title */
+}
+
+.feedback-card {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.question-number {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.current-question-number {
+  font-weight: bold;
+  color: red;
+}
+
+.total-questions-number {
+  color: lightcoral;
+}
+
+.question-wrapper {
+  min-height: 120px;
+}
+
+.question {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-button:disabled {
+  color: grey;
+  cursor: not-allowed;
+}
+
+.nav-button:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.arrow-icon {
+  margin-right: 5px; /* Adjust as needed */
+  font-size: 18px;
+}
+
+.arrow-icon.right {
+  margin-left: 5px; /* Adjust as needed */
+}
+
+/* CSS Transitions */
+
+.fade-in-enter {
+  opacity: 0;
+}
+
+.fade-in-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-out-exit {
+  opacity: 1;
+}
+
+.fade-out-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}

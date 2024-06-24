@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple feedback page created using react js. progress bar was created using custom component and slider created using react-slider library. run 'npm install' to install required libraries. Then run 'npm start'.
 
 ## Available Scripts
 

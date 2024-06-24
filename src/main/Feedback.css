@@ -83,7 +83,7 @@
 }
 
 .nav-button:hover:not(:disabled) {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .arrow-icon {

@@ -3,27 +3,26 @@ import './ProgressBar.css';
 
 const ProgressBar = ({ currentQuestion, totalQuestions }) => {
   const totalBars = 4;
-  const progressPerQuestion = totalBars / totalQuestions; // progress per question
-  const currentProgress = (currentQuestion + 1) * progressPerQuestion; // current progress in bars
+  const progressPerQuestion = totalBars / totalQuestions;
+  const currentProgress = (currentQuestion + 1) * progressPerQuestion;
 
   const calculateFill = (index) => {
     const fill = currentProgress - index;
     if (fill > 1) return 100;
     if (fill < 0) return 0;
-    return fill * 100; // return fill percentage
+    return fill * 100;
   };
 
-  const getColor = (index) => {
+  const getLabelColor = (index) => {
     const fill = currentProgress - index;
-    return fill > 0 ? 'blue' : 'grey';
-  };
+    const hasStartedFilling = fill > 0 && fill <= 1;
+    // const isLastFullyFilled = Math.floor(currentProgress) === index;
 
-  const isLabelBlue = (index) => {
-    if (index === totalBars - 1 && currentQuestion === totalQuestions - 1) {
-      return true;
+    if (hasStartedFilling) {
+      return 'blue';
+    } else  {
+      return 'black';
     }
-    const fill = currentProgress - index;
-    return fill > 0 && fill < 1;
   };
 
   return (
@@ -33,12 +32,12 @@ const ProgressBar = ({ currentQuestion, totalQuestions }) => {
           <div className="progress-bar-background">
             <div
               className="progress-bar"
-              style={{ width: `${calculateFill(index)}%`, backgroundColor: getColor(index) }}
+              style={{ width: `${calculateFill(index)}%`, backgroundColor: 'blue' }}
             ></div>
           </div>
           <div
             className="progress-bar-label"
-            style={{ color: isLabelBlue(index) ? 'blue' : 'black' }}
+            style={{ color: getLabelColor(index) }}
           >
             {['IDEALISTIC', 'DISILLUSIONED', 'CYNICAL', 'HOPEFUL'][index]}
           </div>

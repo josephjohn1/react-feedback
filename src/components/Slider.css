@@ -1,9 +1,11 @@
+/* Slider.css */
+
 .slider-container {
   width: 80%;
   margin: 20px auto;
-  padding: 0 10px;
+  padding: -10 10px;
   position: relative;
-  padding-bottom: 50px; /* Adjust as needed for more space below the slider */
+  padding-bottom: 20px; /* Adjust as needed for more space below the slider */
 }
 
 .horizontal-slider {
@@ -78,20 +80,38 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: -10px; /* Adjust as needed */
+  bottom: 0px; /* Adjust as needed */
   left: 0;
   right: 0;
   pointer-events: none; /* Ensure labels don't interfere with slider interactions */
 }
 
 .slider-label {
-  font-size: 18px;
+  font-size: 20px;
   color: black;
   text-align: center;
-  width: 20%; /* Make each label take up 20% of the container width */
-  position: relative;
+  position: absolute;
   transform: translateX(-50%); /* Center the label horizontally */
-  left: 10%; /* Position the label correctly */
+}
+
+.slider-label-0 {
+  left: 0%;
+}
+
+.slider-label-1 {
+  left: 25%;
+}
+
+.slider-label-2 {
+  left: 50%;
+}
+
+.slider-label-3 {
+  left: 75%;
+}
+
+.slider-label-4 {
+  left: 95%;
 }
 
 .slider-label-active {

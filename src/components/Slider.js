@@ -19,21 +19,28 @@ const CustomSlider = ({ value, onChange }) => {
         onChange={onChange}
         trackClassName="example-track"
         defaultValue={0}
-        value={!value? 0 : value}
+        value={!value ? 0 : value}
         min={0}
         max={4}
         marks
         renderMark={(props) => {
           const { key, className, ...restProps } = props;
-          const markClassName = key < value ? 'example-mark example-mark-completed' :
-            key === value ? 'example-mark example-mark-active' : 'example-mark';
+          const markClassName =
+            key < value
+              ? 'example-mark example-mark-completed'
+              : key === value
+              ? 'example-mark example-mark-active'
+              : 'example-mark';
           return <span key={key} className={markClassName} {...restProps} />;
         }}
         orientation="horizontal"
       />
       <div className="slider-labels">
         {steps.map((mark) => (
-          <div key={mark.value} className={`slider-label ${mark.value === value ? 'slider-label-active' : ''}`}>
+          <div
+            key={mark.value}
+            className={`slider-label slider-label-${mark.value} ${mark.value === value ? 'slider-label-active' : ''}`}
+          >
             {mark.label}
           </div>
         ))}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProgressBar from '../components/ProgressBar';
-import CustomSlider from '../components/Slider'; // Assuming CustomSlider.js is in the same folder
+import CustomSlider from '../components/Slider';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Feedback.css';
 
@@ -26,26 +26,26 @@ const Feedback = () => {
         setCurrentQuestion(currentQuestion + 1);
       }
       setIsTransitioning(false);
-    }, 1000); // 1 second delay
+    }, 1000);
   };
 
   const nextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
-      setIsTransitioning(true); // Set transitioning state
+      setIsTransitioning(true);
       setTimeout(() => {
         setCurrentQuestion(currentQuestion + 1);
-        setIsTransitioning(false); // Clear transitioning state after transition
-      }, 300); // Adjust as needed to match CSS transition duration
+        setIsTransitioning(false);
+      }, 300);
     }
   };
 
   const previousQuestion = () => {
     if (currentQuestion > 0) {
-      setIsTransitioning(true); // Set transitioning state
+      setIsTransitioning(true);
       setTimeout(() => {
         setCurrentQuestion(currentQuestion - 1);
-        setIsTransitioning(false); // Clear transitioning state after transition
-      }, 300); // Adjust as needed to match CSS transition duration
+        setIsTransitioning(false);
+      }, 300);
     }
   };
 
@@ -65,10 +65,9 @@ const Feedback = () => {
 
           <TransitionGroup className="question-wrapper">
             <CSSTransition
-              key={currentQuestion}
+              key={questions[currentQuestion].id}
               timeout={300}
-              classNames={isTransitioning ? 'slide-in' : 'slide-out'}
-              unmountOnExit
+              classNames="fade"
             >
               <div className="question">{questions[currentQuestion].text}</div>
             </CSSTransition>

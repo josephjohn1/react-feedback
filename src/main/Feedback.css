@@ -2,9 +2,9 @@
 
 .feedback-container {
   background-color: lightblue;
-  padding: 100px 10px; /* More padding at the top (60px), 20px on the sides */
-  text-align: center; /* Center align content */
-  position: relative; /* Ensure relative positioning for absolute title */
+  padding: 100px 10px;
+  text-align: center;
+  position: relative;
 }
 
 .feedback-title-container {
@@ -22,8 +22,8 @@
 
 .feedback-content {
   max-width: 1000px;
-  margin: 0 auto; /* Center the content horizontally */
-  padding-top: 80px; /* Adjust as needed to create space below the title */
+  margin: 0 auto;
+  padding-top: 80px;
 }
 
 .feedback-card {
@@ -50,18 +50,22 @@
 
 .question-wrapper {
   min-height: 120px;
+  position: relative; /* Ensure relative positioning for absolute transition */
 }
 
 .question {
   text-align: center;
   font-size: 25px;
   margin-bottom: 40px;
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 
 .navigation-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .nav-button {
@@ -83,30 +87,34 @@
 }
 
 .arrow-icon {
-  margin-right: 5px; /* Adjust as needed */
+  margin-right: 5px;
   font-size: 18px;
 }
 
 .arrow-icon.right {
-  margin-left: 5px; /* Adjust as needed */
+  margin-left: 5px;
 }
 
 /* CSS Transitions */
 
-.fade-in-enter {
+.fade-enter {
   opacity: 0;
+  transform: translateY(-10px);
 }
 
-.fade-in-enter-active {
+.fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
 }
 
-.fade-out-exit {
+.fade-exit {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.fade-out-exit-active {
+.fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
 }
